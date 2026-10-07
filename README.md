@@ -4,11 +4,10 @@ A Chrome new-tab extension that turns your coding progress into heatmaps. Paste 
 
 Includes **Daily Planner**, a small companion extension whose completed days appear in the tracker as another heatmap.
 
-![Portfolio Tracker screenshot](screenshots/newtab.png)
 
 ## Features
 
-- **Heatmaps per platform**, each with a 🔥 current-streak counter. Scroll the panel to add as many platforms as you like.
+- **Heatmaps per platform**, each with a current-streak counter. Scroll the panel to add as many platforms as you like.
 - **Paste a profile link.** The platform and username are detected automatically.
 - **Manual trackers** for any site that can't be synced. Click a square to log +1 for that day, shift-click to remove one.
 - **Customisable look:** light, dark or match-your-wallpaper theme, panel opacity and blur, font, heatmap range (3, 6 or 12 months) and your own wallpaper.
@@ -66,7 +65,6 @@ There is no account, server or analytics. Your trackers, settings, tasks and wal
 ```
 portfolio-tracker/   new-tab page, popup, background worker, icons
 daily-planner/       companion planner extension
-screenshots/         images used in this README
 ```
 
 Plain HTML, CSS and JavaScript (Manifest V3). No build step, no dependencies.
