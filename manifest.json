@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Portfolio Tracker",
+  "version": "1.0",
+  "description": "Heatmaps of your GitHub, LeetCode, Codeforces and custom progress on every new tab.",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "topSites",
+    "favicon"
+  ],
+  "host_permissions": [
+    "https://github.com/*",
+    "https://github-contributions-api.jogruber.de/*",
+    "https://leetcode.com/*",
+    "https://codeforces.com/*",
+    "https://www.hackerrank.com/*",
+    "https://www.codechef.com/*",
+    "https://kenkoooo.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Portfolio Tracker",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

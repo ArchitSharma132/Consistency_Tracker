@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>New Tab</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--fg:#fff;--empty:rgba(255,255,255,.14);--tint:48,30,20;--a:.6;--blur:14px;--font:"Google Sans",Roboto,Arial,sans-serif}
+[data-theme=dark]{--tint:22,22,26}
+[data-theme=light]{--tint:246,247,249;--fg:#1d2127;--empty:rgba(0,0,0,.09)}
+*{box-sizing:border-box}
+body{margin:0;height:100vh;overflow:hidden;font:14px/1.4 var(--font);color:#fff;background:#14110f}
+#bg{position:fixed;inset:0;background:radial-gradient(circle at 50% 30%,#4a2e1c,#14110f 70%) center/cover}
+button,input,select{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer;border-radius:8px}
+:focus-visible{outline:2px solid #8ab4f8;outline-offset:2px}
+.top{position:fixed;top:14px;right:22px;display:flex;gap:18px;align-items:center}.top a{color:#fff;text-decoration:none;font-size:13px}
+.apps{width:22px;height:22px;background:radial-gradient(circle,#fff 2px,transparent 2.6px) 0 0/7.33px 7.33px}
+.center{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;padding-top:17vh}
+.logo{font:500 clamp(64px,8.4vw,120px)/1 var(--font);letter-spacing:-.045em;text-shadow:0 2px 24px #0006}
+form{width:min(745px,50vw);margin-top:38px;position:relative}
+form input{width:100%;height:56px;border-radius:28px;border:0;padding:0 170px 0 58px;background:#fff;color:#202124;font-size:16px;box-shadow:0 1px 6px #0004}
+form .l,form .r{position:absolute;top:0;height:56px;display:flex;align-items:center;gap:16px}
+form .l{left:22px;font-size:28px;color:#5f6368}form .r{right:12px}
+.ai{background:#edf2fa;color:#1f1f1f;text-decoration:none;font-size:14px;padding:9px 14px;border-radius:20px}
+.chips{display:flex;gap:14px;margin-top:16px}
+.chip{width:240px;padding:11px 16px;border-radius:8px;background:rgba(48,30,20,.85);color:#fff;text-decoration:none;font-size:12px}
+.chip b{display:block;font-weight:500;font-size:14px}.chip span{opacity:.75}
+#tiles{display:flex;margin-top:60px}
+#tiles a{width:112px;text-align:center;color:#fff;text-decoration:none;font-size:12px}
+#tiles i{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 8px;border-radius:50%;background:rgba(48,30,20,.85);font-style:normal;font-size:26px}
+#tiles img{width:24px;height:24px}#tiles span{display:block;padding:0 6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#pen{position:fixed;right:18px;bottom:14px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff}
+#panel{position:fixed;left:1.7vw;top:3.5vh;bottom:4vh;width:clamp(270px,20.6vw,380px);display:flex;flex-direction:column;
+ padding:16px 14px 12px;border-radius:20px;color:var(--fg);background:rgba(var(--tint),var(--a));
+ backdrop-filter:blur(var(--blur));border:1px solid rgba(255,255,255,.12)}
+#panel header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+h1{margin:0;font-size:16px;font-weight:500}
+header button{width:30px;height:30px;font-size:16px}header button:hover{background:rgba(127,127,127,.25)}
+#list{overflow-y:auto;flex:1;padding-right:6px;scrollbar-width:thin;scrollbar-color:rgba(127,127,127,.5) transparent}
+.p{margin-bottom:18px}.p .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;font-size:13px}
+.p .t b{font-weight:500}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px}
+.h{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,auto);grid-template-columns:repeat(var(--w),1fr);gap:2px}
+.h span{aspect-ratio:1;border-radius:2px;background:var(--empty)}.h.m span{cursor:pointer}
+.empty{opacity:.7;font-size:13px}
+dialog{width:min(520px,92vw);max-height:88vh;overflow:auto;border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:22px;
+ background:rgb(var(--tint));color:var(--fg);font-family:var(--font)}
+dialog::backdrop{background:#0008}
+dialog h2{margin:0 0 12px;font-size:18px;font-weight:500}dialog h3{margin:18px 0 8px;font-size:13px;font-weight:500;opacity:.7}
+.row{display:flex;gap:10px;align-items:center;margin:8px 0;flex-wrap:wrap}.row>label{min-width:90px}
+input,select{background:rgba(127,127,127,.18);border:1px solid rgba(127,127,127,.3);border-radius:8px;padding:6px 10px}
+select option{color:#222}.grow{flex:1;min-width:110px}input[type=color]{padding:2px;width:38px;height:32px}
+.sw{width:34px;height:34px;border-radius:50%;border:2px solid transparent}.sw.on{border-color:#8ab4f8}
+.btn{background:rgba(127,127,127,.22);padding:6px 14px}.btn:hover{background:rgba(127,127,127,.35)}
+.item{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(127,127,127,.25)}
+.hint{font-size:12px;opacity:.65}
+@media(max-width:900px){.center{padding-left:0}#panel{position:static;width:auto;margin:16px;height:60vh}body{overflow:auto}}
+#panel[hidden]{display:none}
+</style></head><body>
+<div id="bg"></div>
+<nav class="top"><a href="https://mail.google.com">Gmail</a><a href="https://www.google.com/imghp">Images</a><a class="apps" href="https://about.google/products/" aria-label="Google apps"></a></nav>
+<main class="center">
+  <div class="logo">Google</div>
+  <form action="https://www.google.com/search">
+    <div class="l" aria-hidden="true">+</div>
+    <input name="q" placeholder="Ask Google" autocomplete="off" autofocus aria-label="Search Google">
+    <div class="r"><svg width="24" height="24" viewBox="0 0 24 24" fill="#5f6368"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+    <a href="https://lens.google.com/" aria-label="Search with Lens"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="4"/><circle cx="12" cy="12" r="3.2"/></svg></a>
+    <a class="ai" href="https://www.google.com/search?udm=50">AI Mode</a></div>
+  </form>
+  <div class="chips"><a class="chip" href="https://www.google.com/search?udm=50"><b>Do more with AI Mode</b><span>Create, plan, summarize</span></a>
+  <a class="chip" href="https://gemini.google.com/"><b>Create images</b><span>Add an image and reimagine it</span></a></div>
+  <div id="tiles"></div>
+</main>
+<button id="pen" aria-label="Customize" title="Customize">✎</button>
+<aside id="panel">
+  <header><h1>Portfolio Tracker</h1><div><button id="refresh" title="Refresh data" aria-label="Refresh data">↻</button><button id="gear" title="Settings" aria-label="Settings">⚙</button></div></header>
+  <div id="list"></div>
+</aside>
+<dialog id="dlg">
+  <h2>Settings</h2>
+  <h3>Theme</h3>
+  <div class="row"><button class="sw" data-t="light" style="background:#e9ecef" title="Light"></button>
+   <button class="sw" data-t="dark" style="background:#2e2e32" title="Dark"></button>
+   <button class="sw" data-t="browser" id="swb" title="Match browser (tinted from your wallpaper)"></button>
+   <span class="hint">Light · Dark · Match browser</span></div>
+  <div class="row"><label>Opacity</label><input type="range" id="a" min="0.1" max="1" step="0.05" class="grow"></div>
+  <div class="row"><label>Blur</label><input type="range" id="blur" min="0" max="30" class="grow"></div>
+  <div class="row"><label>Heatmap range</label><select id="weeks"><option value="13">3 months</option><option value="26">6 months</option><option value="52">12 months</option></select></div>
+  <div class="row"><label>Font</label><select id="font"><option value="browser">Browser (Google Sans / Roboto)</option><option value="system">System</option><option value="serif">Serif</option><option value="mono">Monospace</option></select></div>
+  <div class="row"><label>Wallpaper</label><input type="file" id="bgfile" accept="image/*" class="grow"><button class="btn" id="bgreset">Reset</button></div>
+  <h3>Platforms</h3><div id="tlist"></div>
+  <div class="row"><input id="link" class="grow" placeholder="Paste profile link (GitHub, LeetCode, Codeforces…)"></div>
+  <div class="row"><input id="label" class="grow" placeholder="Label (optional)"><input id="color" type="color" value="#4cc38a" aria-label="Color"><button class="btn" id="add">Add platform</button></div>
+  <div class="hint" id="typehint"></div>
+  <div class="row" style="justify-content:flex-end;margin-top:14px"><button class="btn" id="close">Done</button></div>
+</dialog>
+<script src="newtab.js"></script>
+</body></html>
