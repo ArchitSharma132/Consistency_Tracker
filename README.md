@@ -76,3 +76,15 @@ Not affiliated with Google or any of the listed platforms. The new tab page imit
 ## License
 
 MIT
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2778-sum-of-squares-of-special-elements](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2778-sum-of-squares-of-special-elements/) | Easy |
+## Enumeration
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2778-sum-of-squares-of-special-elements](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2778-sum-of-squares-of-special-elements/) | Easy |
+<!---LeetCode Topics End-->
