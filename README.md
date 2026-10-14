@@ -87,4 +87,12 @@ MIT
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2778-sum-of-squares-of-special-elements](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2778-sum-of-squares-of-special-elements/) | Easy |
+## Math
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3723-maximize-sum-of-squares-of-digits](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/3723-maximize-sum-of-squares-of-digits/) | Medium |
+## Greedy
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3723-maximize-sum-of-squares-of-digits](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/3723-maximize-sum-of-squares-of-digits/) | Medium |
 <!---LeetCode Topics End-->
