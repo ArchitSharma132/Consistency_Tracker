@@ -83,6 +83,7 @@ MIT
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2778-sum-of-squares-of-special-elements](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2778-sum-of-squares-of-special-elements/) | Easy |
+| [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
 ## Enumeration
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -95,4 +96,16 @@ MIT
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [3723-maximize-sum-of-squares-of-digits](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/3723-maximize-sum-of-squares-of-digits/) | Medium |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
+## Binary Indexed Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
+## Segment Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
 <!---LeetCode Topics End-->
