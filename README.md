@@ -91,6 +91,7 @@ MIT
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0013-roman-to-integer](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/0013-roman-to-integer/) | Easy |
 | [3723-maximize-sum-of-squares-of-digits](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/3723-maximize-sum-of-squares-of-digits/) | Medium |
 ## Greedy
 | Problem Name | Difficulty |
@@ -99,6 +100,7 @@ MIT
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0013-roman-to-integer](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/0013-roman-to-integer/) | Easy |
 | [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
 ## Binary Indexed Tree
 | Problem Name | Difficulty |
@@ -108,4 +110,8 @@ MIT
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
+## String
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0013-roman-to-integer](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/0013-roman-to-integer/) | Easy |
 <!---LeetCode Topics End-->
