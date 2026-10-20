@@ -82,6 +82,7 @@ MIT
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [2089-find-target-indices-after-sorting-array](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2089-find-target-indices-after-sorting-array/) | Easy |
 | [2778-sum-of-squares-of-special-elements](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2778-sum-of-squares-of-special-elements/) | Easy |
 | [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
 ## Enumeration
@@ -114,4 +115,12 @@ MIT
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0013-roman-to-integer](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/0013-roman-to-integer/) | Easy |
+## Binary Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2089-find-target-indices-after-sorting-array](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2089-find-target-indices-after-sorting-array/) | Easy |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2089-find-target-indices-after-sorting-array](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2089-find-target-indices-after-sorting-array/) | Easy |
 <!---LeetCode Topics End-->
