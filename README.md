@@ -115,6 +115,7 @@ MIT
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0013-roman-to-integer](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/0013-roman-to-integer/) | Easy |
+| [3863-minimum-operations-to-sort-a-string](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/3863-minimum-operations-to-sort-a-string/) | Medium |
 ## Binary Search
 | Problem Name | Difficulty |
 | ------- | ------- |
