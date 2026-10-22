@@ -1,0 +1,118 @@
+#  Daily Planner
+
+A minimal Chrome extension for building a daily habit. You keep one fixed list of tasks that repeats every day. When you finish **every** task on the list, that day counts as **1 day of work** and shows up as a heatmap square in [Portfolio Tracker](../portfolio-tracker) on your new tab page.
+
+> This extension lives in the same repository as Portfolio Tracker and is designed to work alongside it. The planner works on its own too, but the heatmap needs the tracker.
+
+## Features
+
+- **Constant daily routine**: add your tasks once and they appear every day, unticked each morning.
+- **All-or-nothing days**: a day counts only when every task is done. Add or untick a task and the day stops counting until it is complete again.
+- **Task descriptions**: add an optional description under any task, and edit it later with ✎.
+- **Quotes on hover**: save your own quotes and hover over the day title to see one. With several quotes, a random one is shown each time.
+- **History view**: step back and forward through days with ‹ and ›. Past days keep the task list they had at the time, so changing your routine never rewrites history.
+- **Tracker integration**: completed days appear as a "Daily Planner" heatmap with a 🔥 streak in Portfolio Tracker.
+- **Private**: everything is stored locally in your browser. There is no account, server or analytics.
+
+## Repository layout
+
+```
+your-repo/
+├── portfolio-tracker/     # the new-tab heatmap extension
+│   ├── manifest.json
+│   ├── background.js      # receives data from the planner
+│   ├── newtab.html
+│   ├── newtab.js
+│   ├── popup.html
+│   └── popup.js
+└── daily-planner/         # this extension
+    ├── manifest.json
+    ├── popup.html
+    ├── popup.js
+    ├── README.md
+    └── icons/
+        ├── icon16.png
+        ├── icon32.png
+        ├── icon48.png
+        └── icon128.png
+```
+
+Folder names are just an example. Use whatever names you like.
+
+## Installation
+
+Both extensions are loaded unpacked, so there is no build step.
+
+1. Clone or download this repository.
+2. Open `chrome://extensions` and turn on **Developer mode** (top right).
+3. Click **Load unpacked** and select the `portfolio-tracker` folder.
+4. Click **Load unpacked** again and select the `daily-planner` folder.
+5. Pin the sun icon from the puzzle-piece menu so it is always in your toolbar.
+
+## Connecting the planner to Portfolio Tracker
+
+Chrome extensions cannot read each other's storage, so the planner sends its results to the tracker as messages. You need to tell the planner which extension to send them to:
+
+1. On `chrome://extensions`, find **Portfolio Tracker** and copy its **ID**.
+2. Click the planner's sun icon and open **Tracker connection** at the bottom of the popup.
+3. Paste the ID. The planner syncs immediately.
+
+A "Daily Planner" heatmap then appears in the tracker panel on your new tab. Its squares are read-only, because the planner controls them.
+
+> **Note:** an unpacked extension's ID is derived from its folder path. If you move or re-add the tracker, copy the new ID into the planner again.
+
+### Required changes in Portfolio Tracker
+
+The tracker in this repo already includes the changes below. They are listed here in case you are updating an older copy:
+
+| File | Change |
+| --- | --- |
+| `manifest.json` | Registers `background.js` as the service worker (`"background": { "service_worker": "background.js" }`). |
+| `background.js` | New file. Listens for `chrome.runtime.onMessageExternal`, creates the "Daily Planner" tracker if needed, and writes the received days into it. |
+| `newtab.js` | Refreshes the panel when stored data changes, and ignores clicks on the planner's squares. |
+
+## Usage
+
+| Action | How |
+| --- | --- |
+| Add a daily task | Type it in the first box, optionally add a description in the second, press **Enter**. |
+| Tick a task off | Click its checkbox. |
+| Edit a task | Click ✎, change the text or description, press **Enter** or ✓. **Esc** cancels. |
+| Remove a task | Click ✕. This applies from today onward. |
+| Browse other days | Use ‹ and › next to the date. |
+| Add a quote | Open **Quotes** in the popup, type it, press **Enter**. |
+| See a quote | Hover over the day title. |
+| Force a re-sync | Click **Sync all**. |
+
+## How it works
+
+Data is kept in `chrome.storage.local`:
+
+- `routine`: the list of daily tasks, `[{ id, text, desc }]`.
+- `log`: per-date records, `{ "YYYY-MM-DD": { done: [ids], req: [{ id, text, desc }] } }`. `req` is a snapshot of the tasks required that day.
+- `quotes`: an array of strings.
+- `trackerId`: the Portfolio Tracker extension ID.
+
+Whenever you change something, the planner sends the affected dates to the tracker:
+
+```js
+chrome.runtime.sendMessage(trackerId, {
+  type: 'planner-sync',
+  data: { '2026-10-22': 1, '2026-10-21': 0 } // 1 = every task done, 0 = not complete
+});
+```
+
+## Permissions
+
+| Permission | Why |
+| --- | --- |
+| `storage` | Saves your tasks, history, quotes and tracker ID locally. |
+
+The planner requests no host permissions and makes no network requests. Its only outside communication is the message to the Portfolio Tracker extension.
+
+## Troubleshooting
+
+- **"Tracker not reachable"**: check that the ID is correct, that Portfolio Tracker is enabled, and that your tracker copy includes `background.js`.
+- **Nothing appears in the tracker**: reload Portfolio Tracker on `chrome://extensions`, open a new tab, then click **Sync all** in the planner.
+- **Heatmap shows no days yet**: a day only counts once all its tasks are ticked, and a day with no tasks never counts.
+- **Quotes don't appear on hover**: add at least one quote under **Quotes**. With none saved, the hover tells you where to add them.
