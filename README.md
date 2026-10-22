@@ -124,4 +124,12 @@ MIT
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2089-find-target-indices-after-sorting-array](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2089-find-target-indices-after-sorting-array/) | Easy |
+## Linked List
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0021-merge-two-sorted-lists](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/0021-merge-two-sorted-lists/) | Easy |
+## Recursion
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0021-merge-two-sorted-lists](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/0021-merge-two-sorted-lists/) | Easy |
 <!---LeetCode Topics End-->
