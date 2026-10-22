@@ -1,0 +1,44 @@
+<!doctype html><meta charset="utf-8">
+<style>
+body{margin:0;width:340px;padding:14px;background:#2a1b12;color:#fff;font:14px/1.4 "Google Sans",Roboto,Arial,sans-serif}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;position:relative}
+.nav b{font-weight:500;font-size:15px;cursor:help;padding:2px 8px;border-radius:6px}
+.nav b:hover,.nav b:focus{background:#3a2718;outline:none}
+#tip{display:none;position:absolute;left:12px;right:12px;top:calc(100% + 2px);z-index:5;background:#4a3322;border:1px solid #6a4a33;
+ border-radius:10px;padding:9px 12px;font-size:13px;font-style:italic;box-shadow:0 4px 14px #0008;pointer-events:none}
+button{font:inherit;color:inherit;background:#4a3322;border:0;border-radius:8px;padding:6px 10px;cursor:pointer}
+button:hover{background:#5c4230}
+:focus-visible{outline:2px solid #8ab4f8;outline-offset:2px}
+input[type=text]{font:inherit;color:#fff;background:#3a2718;border:1px solid #5a4636;border-radius:8px;padding:7px 10px;width:100%}
+.add{display:flex;gap:8px;margin-bottom:6px}.add input{flex:1}
+#desc{margin-bottom:10px;font-size:13px}
+#list{max-height:240px;overflow-y:auto}
+.item{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #4a3322}
+.item>input[type=checkbox]{accent-color:#c58af9;width:16px;height:16px;margin-top:3px}
+.txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.t{word-break:break-word}.desc{font-size:12px;opacity:.65;word-break:break-word}
+.item.done .t{text-decoration:line-through}.item.done .txt{opacity:.55}
+.x{background:none;opacity:.6;padding:2px 6px}
+.acts{display:flex}
+.empty{opacity:.65;padding:12px 0}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12px}
+#status{opacity:.7}
+details{margin-top:10px;font-size:12px}summary{cursor:pointer;opacity:.75}
+details .add{margin-top:6px}
+#qlist{max-height:120px;overflow-y:auto}
+.q{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px solid #4a3322;font-style:italic}.q span{flex:1;word-break:break-word}
+</style>
+<div class="nav"><button id="prev" aria-label="Previous day">‹</button><b id="title" tabindex="0"></b><button id="next" aria-label="Next day">›</button><div id="tip" role="tooltip"></div></div>
+<div class="add"><input type="text" id="new" placeholder="Add a daily task and press Enter" autofocus><button id="addbtn">Add</button></div>
+<input type="text" id="desc" placeholder="Description (optional)">
+<div id="list"></div>
+<div class="foot"><span id="count"></span><button id="syncall">Sync all</button></div>
+<div class="foot"><span id="status"></span></div>
+<details id="qdet"><summary>Quotes</summary>
+<div class="add"><input type="text" id="qnew" placeholder="Add a quote and press Enter"><button id="qadd">Add</button></div>
+<div id="qlist"></div>
+<div style="opacity:.65;margin-top:4px">Hover the day title to see a random quote.</div></details>
+<details id="det"><summary>Tracker connection</summary>
+<input type="text" id="tid" placeholder="Portfolio Tracker extension ID" style="margin-top:6px">
+<div style="opacity:.65;margin-top:4px">Find it at chrome://extensions (turn on Developer mode).</div></details>
+<script src="popup.js"></script>
