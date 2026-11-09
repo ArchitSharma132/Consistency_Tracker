@@ -82,6 +82,7 @@ MIT
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1267-count-servers-that-communicate](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/1267-count-servers-that-communicate/) | Medium |
 | [2089-find-target-indices-after-sorting-array](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2089-find-target-indices-after-sorting-array/) | Easy |
 | [2778-sum-of-squares-of-special-elements](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2778-sum-of-squares-of-special-elements/) | Easy |
 | [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
@@ -132,4 +133,24 @@ MIT
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/0021-merge-two-sorted-lists/) | Easy |
+## Depth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1267-count-servers-that-communicate](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/1267-count-servers-that-communicate/) | Medium |
+## Breadth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1267-count-servers-that-communicate](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/1267-count-servers-that-communicate/) | Medium |
+## Union-Find
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1267-count-servers-that-communicate](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/1267-count-servers-that-communicate/) | Medium |
+## Matrix
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1267-count-servers-that-communicate](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/1267-count-servers-that-communicate/) | Medium |
+## Counting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1267-count-servers-that-communicate](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/1267-count-servers-that-communicate/) | Medium |
 <!---LeetCode Topics End-->
