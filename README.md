@@ -86,6 +86,7 @@ MIT
 | [2089-find-target-indices-after-sorting-array](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2089-find-target-indices-after-sorting-array/) | Easy |
 | [2778-sum-of-squares-of-special-elements](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2778-sum-of-squares-of-special-elements/) | Easy |
 | [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy |
+| [3693-climbing-stairs-ii](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/3693-climbing-stairs-ii/) | Medium |
 ## Enumeration
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -153,4 +154,8 @@ MIT
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1267-count-servers-that-communicate](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/1267-count-servers-that-communicate/) | Medium |
+## Dynamic Programming
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3693-climbing-stairs-ii](https://github.com/ArchitSharma132/Consistency_Tracker/tree/main/3693-climbing-stairs-ii/) | Medium |
 <!---LeetCode Topics End-->
